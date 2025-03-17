@@ -264,7 +264,7 @@ Similarly, you can customize text generation by adding parameters to the generat
 
 ## Leaderboard
 
-Check out the current leaderboard at [Arm-LLM-Benchmark](https://huggingface.co/spaces/Metric-AI/Arm-LLM-Benchmark) to see how your model compares to others on Armenian language tasks.
+Check out the current leaderboard at [Metric-AI/Arm-LLM-Benchmark](https://huggingface.co/spaces/Metric-AI/Arm-LLM-Benchmark) to see how your model compares to others on Armenian language tasks.
 
 ## Contributing
 
