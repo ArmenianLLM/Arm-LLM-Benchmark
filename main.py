@@ -1,7 +1,7 @@
 from eval_datasets.mmlu_pro.load_mmlu_pro import load_mmlu_pro_hy
-from eval_datasets.Armenian_history.load_Armenian_history_test import load_Armenian_history_test
-from eval_datasets.Armenian_language_and_literature.load_Armenian_language_test import load_Armenian_language_test
-from eval_datasets.Mathematics.load_matemathics_test import load_Mathematics_test
+from eval_datasets.armenian_history.load_armenian_history_test import load_armenian_history_test
+from eval_datasets.armenian_language_and_literature.load_armenian_language_test import load_armenian_language_test
+from eval_datasets.mathematics.load_matemathics_test import load_mathematics_test
 from generate_responses import get_completions
 from load_configuration import load_config, validate_model_config, validate_dataset_config
 from evaluate_model import evaluation
@@ -21,9 +21,9 @@ def main(model_config_path, generation_config_path, dataset_config_path, get_res
         generation_config = {}
 
     dataset_loaders = {
-        'Armenian language and literature': load_Armenian_language_test,
-        'Armenian history': load_Armenian_history_test,
-        'Mathematics': load_Mathematics_test,
+        'Armenian language and literature': load_armenian_language_test,
+        'Armenian history': load_armenian_history_test,
+        'Mathematics': load_mathematics_test,
         'mmlu_pro': load_mmlu_pro_hy
     }
 

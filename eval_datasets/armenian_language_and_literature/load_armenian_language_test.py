@@ -8,14 +8,14 @@ cpu_count = os.cpu_count()
 
 def armenian_language_test_processing(row):
     if row['task_type'] == 1:
-        system_prompt_path = 'eval_datasets/Armenian_language_and_literature/task1_system_prompt.md'
-        input_prompt_path = 'eval_datasets/Armenian_language_and_literature/task1_input_prompt.md'
+        system_prompt_path = 'eval_datasets/armenian_language_and_literature/task1_system_prompt.md'
+        input_prompt_path = 'eval_datasets/armenian_language_and_literature/task1_input_prompt.md'
     elif row['task_type'] == 2:
-        system_prompt_path = 'eval_datasets/Armenian_language_and_literature/task2_system_prompt.md'
-        input_prompt_path = 'eval_datasets/Armenian_language_and_literature/task2_input_prompt.md'
+        system_prompt_path = 'eval_datasets/armenian_language_and_literature/task2_system_prompt.md'
+        input_prompt_path = 'eval_datasets/armenian_language_and_literature/task2_input_prompt.md'
     elif row['task_type'] == 3:
-        system_prompt_path = 'eval_datasets/Armenian_language_and_literature/task3_system_prompt.md'
-        input_prompt_path = 'eval_datasets/Armenian_language_and_literature/task3_input_prompt.md'
+        system_prompt_path = 'eval_datasets/armenian_language_and_literature/task3_system_prompt.md'
+        input_prompt_path = 'eval_datasets/armenian_language_and_literature/task3_input_prompt.md'
 
 
     with open(system_prompt_path, 'r') as file:
@@ -36,7 +36,7 @@ def armenian_language_test_processing(row):
     formatted_input_prompt += "Output: "
     return pd.Series({'system_prompt': system_prompt, 'input_prompt': formatted_input_prompt})
 
-def load_Armenian_language_test():
+def load_armenian_language_test():
     df = load_dataset('Metric-AI/armenian-language-test-2025-1')['train'].to_pandas()
     inputs = df.apply(armenian_language_test_processing, axis=1)
     df = pd.concat([df, inputs], axis=1)

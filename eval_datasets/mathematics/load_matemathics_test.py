@@ -8,14 +8,14 @@ cpu_count = os.cpu_count()
 
 def mathematics_test_processing(row):
     if row['task_type'] == 6:
-        system_prompt_path = 'eval_datasets/Mathematics/task1_system_prompt.md'
-        input_prompt_path = 'eval_datasets/Mathematics/task1_input_prompt.md'
+        system_prompt_path = 'eval_datasets/mathematics/task1_system_prompt.md'
+        input_prompt_path = 'eval_datasets/mathematics/task1_input_prompt.md'
     elif row['task_type'] == 7:
-        system_prompt_path = 'eval_datasets/Mathematics/task2_system_prompt.md'
-        input_prompt_path = 'eval_datasets/Mathematics/task2_input_prompt.md'
+        system_prompt_path = 'eval_datasets/mathematics/task2_system_prompt.md'
+        input_prompt_path = 'eval_datasets/mathematics/task2_input_prompt.md'
     elif row['task_type'] == 3:
-        system_prompt_path = 'eval_datasets/Mathematics/task3_system_prompt.md'
-        input_prompt_path = 'eval_datasets/Mathematics/task3_input_prompt.md'
+        system_prompt_path = 'eval_datasets/mathematics/task3_system_prompt.md'
+        input_prompt_path = 'eval_datasets/mathematics/task3_input_prompt.md'
 
     with open(system_prompt_path, 'r') as file:
         system_prompt = file.read()
@@ -31,7 +31,7 @@ def mathematics_test_processing(row):
     formatted_input_prompt += "Output: "
     return pd.Series({'system_prompt': system_prompt, 'input_prompt': formatted_input_prompt})
 
-def load_Mathematics_test():
+def load_mathematics_test():
     df = load_dataset('Metric-AI/mathematics-test-2025-1')['train'].to_pandas()
     inputs = df.apply(mathematics_test_processing, axis=1)
     df = pd.concat([df, inputs], axis=1)

@@ -8,20 +8,20 @@ cpu_count = os.cpu_count()
 
 def armenian_history_test_processing(row):
     if row['task_type'] == 1:
-        system_prompt_path = 'eval_datasets/Armenian_history/task1_system_prompt.md'
-        input_prompt_path = 'eval_datasets/Armenian_history/task1_input_prompt.md'
+        system_prompt_path = 'eval_datasets/armenian_history/task1_system_prompt.md'
+        input_prompt_path = 'eval_datasets/armenian_history/task1_input_prompt.md'
     elif row['task_type'] == 2:
-        system_prompt_path = 'eval_datasets/Armenian_history/task2_system_prompt.md'
-        input_prompt_path = 'eval_datasets/Armenian_history/task2_input_prompt.md'
+        system_prompt_path = 'eval_datasets/armenian_history/task2_system_prompt.md'
+        input_prompt_path = 'eval_datasets/armenian_history/task2_input_prompt.md'
     elif row['task_type'] == 3:
-        system_prompt_path = 'eval_datasets/Armenian_history/task3_system_prompt.md'
-        input_prompt_path = 'eval_datasets/Armenian_history/task3_input_prompt.md'
+        system_prompt_path = 'eval_datasets/armenian_history/task3_system_prompt.md'
+        input_prompt_path = 'eval_datasets/armenian_history/task3_input_prompt.md'
     elif row['task_type'] == 4:
-        system_prompt_path = 'eval_datasets/Armenian_history/task4_system_prompt.md'
-        input_prompt_path = 'eval_datasets/Armenian_history/task4_input_prompt.md'
+        system_prompt_path = 'eval_datasets/armenian_history/task4_system_prompt.md'
+        input_prompt_path = 'eval_datasets/armenian_history/task4_input_prompt.md'
     elif row['task_type'] == 5:
-        system_prompt_path = 'eval_datasets/Armenian_history/task5_system_prompt.md'
-        input_prompt_path = 'eval_datasets/Armenian_history/task5_input_prompt.md'
+        system_prompt_path = 'eval_datasets/armenian_history/task5_system_prompt.md'
+        input_prompt_path = 'eval_datasets/armenian_history/task5_input_prompt.md'
 
 
     with open(system_prompt_path, 'r') as file:
@@ -42,7 +42,7 @@ def armenian_history_test_processing(row):
     formatted_input_prompt += "Output: "
     return pd.Series({'system_prompt': system_prompt, 'input_prompt': formatted_input_prompt})
 
-def load_Armenian_history_test():
+def load_armenian_history_test():
     df = load_dataset('Metric-AI/armenian-history-test-2025-1')['train'].to_pandas()
     inputs = df.apply(armenian_history_test_processing, axis=1)
     df = pd.concat([df, inputs], axis=1)
