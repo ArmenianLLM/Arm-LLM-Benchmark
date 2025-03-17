@@ -167,7 +167,7 @@ This will create a `results.json` file in the model's output directory with comp
 
 ### Step 3: Submit your results to the leaderboard
 
-After evaluating your model, you can submit your results to the [Metric-AI/ArmBench](https://huggingface.co/spaces/Metric-AI/ArmBench) leaderboard by following these steps:
+After evaluating your model, you can submit your results to the [Metric-AI/Arm-LLM-Benchmark](https://huggingface.co/spaces/Metric-AI/Arm-LLM-Benchmark) leaderboard by following these steps:
 
 1. Push your model and tokenizer to the Hugging Face Hub
 2. Add the `Arm-LLM-Benchmark` tag to your model repository
